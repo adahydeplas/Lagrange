@@ -85,7 +85,7 @@ def Lagrange(L:dict, y:dict):
 	PF=0
 	for k in L:
 		PF+=y[k]*L[k]
-	print(PF)
+	return PF
 
 #--- Fonctions complémentaires ---
 
@@ -116,12 +116,12 @@ def main():
 			read_file(sys.argv[2])
 			show_points(x, y)
 			PInterpol(x, L)
-			Lagrange(L, y)
+			print(Lagrange(L, y))
 		elif sys.argv[1]=="--cli":
 			askpoints(x, y)
 			show_points(x,y)
 			PInterpol(x, L)
-			Lagrange(L, y)
+			print(Lagrange(L, y))
 		else:
 			print(f"l'option {sys.argv[1]} n'existe pas !")
 			info()
